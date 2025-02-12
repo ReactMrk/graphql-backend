@@ -1,0 +1,26 @@
+input InputClient {
+  name: String
+  email: String!
+  phone: String
+  address: String
+  grossSalary: Float
+}
+
+type Client {
+  name: String
+  email: String
+  phone: String
+  address: String
+  grossSalary: Float
+  netSalary: Float
+}
+
+type Query {
+  getClients: [Client]
+  getClient(email: String): Client
+}
+
+type Mutation {
+  addClient(client: InputClient): [Client]
+  removeClient(email: String!): [Client]
+}
