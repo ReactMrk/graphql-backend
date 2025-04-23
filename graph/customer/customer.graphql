@@ -12,7 +12,6 @@ type Customer {
   phone: String
   address: String
   grossSalary: Float
-  netSalary: Float
 }
 
 type Query {
