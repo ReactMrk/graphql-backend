@@ -1,4 +1,4 @@
-input InputClient {
+input InputCustomer {
   name: String
   email: String!
   phone: String
@@ -6,7 +6,7 @@ input InputClient {
   grossSalary: Float
 }
 
-type Client {
+type Customer {
   name: String
   email: String
   phone: String
@@ -16,11 +16,11 @@ type Client {
 }
 
 type Query {
-  getClients: [Client]
-  getClient(email: String): Client
+  getCustomers: [Customer]
+  getCustomer(email: String): Customer
 }
 
 type Mutation {
-  addClient(client: InputClient): [Client]
-  removeClient(email: String!): [Client]
+  addCustomer(customer: InputCustomer): [Customer]
+  removeCustomer(email: String!): [Customer]
 }
