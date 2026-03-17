@@ -14,10 +14,6 @@ type Customer {
   grossSalary: Float
 }
 
-type Query {
-  getCustomer(email: String): Customer
-}
-
 type Mutation {
   addCustomer(customer: InputCustomer): [Customer]
 }

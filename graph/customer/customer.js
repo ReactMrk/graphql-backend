@@ -8,9 +8,6 @@ const typeDefs = buildSchema(
 );
 
 const resolvers = {
-  Query: {
-    getCustomer: (_, { email } ) => customers.find((customer) => customer.email === email)
-  },
   Mutation: {
     addCustomer: (_, { customer } ) => {
       if (!customer?.email) throw Error("Email is a mandatory field");
