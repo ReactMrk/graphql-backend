@@ -17,3 +17,7 @@ type Customer {
 type Mutation {
   addCustomer(customer: InputCustomer): [Customer]
 }
+
+type Query {
+  getCustomer(email: String): Customer
+}
