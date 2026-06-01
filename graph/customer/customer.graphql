@@ -14,10 +14,12 @@ type Customer {
   grossSalary: Float
 }
 
-type Query {
-  getCustomer(email: String): Customer
+type Mutation {
+  addCustomer(customer: InputCustomer): [Customer],
+  removeCustomer(email: String): [Customer]
 }
 
-type Mutation {
-  addCustomer(customer: InputCustomer): [Customer]
+type Query {
+  getCustomers: [Customer]
+  getCustomer(email: String): Customer
 }
