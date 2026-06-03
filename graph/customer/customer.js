@@ -20,7 +20,7 @@ const resolvers = {
     },
     removeCustomer: (_, { email } ) => {
       if (customers.length === 0) throw Error("customers array is empty");
-      customers.push(customers?.filter(customer => customer?.email !== email));
+      customers = customers.filter(customer => customer?.email !== email);
       return customers;
     }
     }
