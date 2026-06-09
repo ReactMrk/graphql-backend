@@ -10,7 +10,6 @@ const typeDefs = buildSchema(
 const resolvers = {
   Mutation: {
     addCustomer: (_, { customer } ) => {
-      if (!customer?.email) throw Error("Email is a mandatory field");
       customers.push(customer);
       return customers;
     }
