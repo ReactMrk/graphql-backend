@@ -15,11 +15,11 @@ type Customer {
 }
 
 type Mutation {
-  addCustomer(customer: InputCustomer): [Customer],
-  removeCustomer(email: String): [Customer]
+  addCustomer(customer: InputCustomer!): [Customer]
+  removeCustomer(email: String!): [Customer]
 }
 
 type Query {
-  getCustomers: [Customer]
-  getCustomer(email: String): Customer
+  getCustomersList: [Customer]
+  getCustomer(email: String!): Customer
 }

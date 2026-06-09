@@ -10,16 +10,15 @@ const typeDefs = buildSchema(
 const resolvers = {
   Query: {
     getCustomer: (_, { email } ) => customers.find((customer) => customer.email === email),
-    getCustomers: (_, ) => customers
+    getCustomersList: (_, ) => customers
   },
   Mutation: {
     addCustomer: (_, { customer } ) => {
-      if (!customer?.email) throw Error("Email is a mandatory field");
       customers.push(customer);
       return customers;
     },
     removeCustomer: (_, { email } ) => {
-      if (customers.length === 0) throw Error("customers array is empty");
+      if (customers.length === 0) throw Error("Customers array is empty.");
       customers = customers.filter(customer => customer?.email !== email);
       return customers;
     }
