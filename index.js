@@ -3,7 +3,7 @@ import { startStandaloneServer } from '@apollo/server/standalone';
 import { schema } from './graph/index.js';
 
 const server = new ApolloServer({
-  schema: schema
+  schema: schema,
 });
 
 const { url } = await startStandaloneServer(server, {
